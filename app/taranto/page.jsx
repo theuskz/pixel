@@ -16,13 +16,11 @@ export default function TarantoPage() {
   return (
     <main className="w-full relative">
 
-      {/* BOTÃO VOLTAR */}
-
       {/* HERO */}
       <section className="bg-[#00674F] py-24">
         <Link
           href="/"
-          className="w-[90px] -mt-16 mb-14   ml-10 flex items-center gap-1
+          className="w-[90px] -mt-16 mb-14 ml-10 flex items-center gap-1
                    bg-white/80 backdrop-blur
                    text-gray-700 text-sm font-medium
                    px-3 py-2 rounded-full
@@ -33,6 +31,7 @@ export default function TarantoPage() {
         </Link>
 
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+          {/* TEXTO */}
           <div>
             <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
               Portal Muralhas de Taranto
@@ -61,14 +60,18 @@ export default function TarantoPage() {
             </Link>
           </div>
 
-          <Image
-            src="/page1.jpeg"
-            alt="Portal Muralhas de Taranto"
-            width={520}
-            height={360}
-            className="rounded-2xl shadow-xl"
-            priority
-          />
+          {/* VÍDEO AUTO LOOP */}
+          <div className="rounded-2xl shadow-xl overflow-hidden">
+            <video
+              src="/taranto.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </section>
 

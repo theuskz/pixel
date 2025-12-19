@@ -2,7 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: {
-    default: "BRZ Empreendimentos",
+    default: "HOUSE LAVRAS",
     template: "%s | BRZ Empreendimentos",
   },
   description: "Garanta seu imóvel com a BRZ Empreendimentos",

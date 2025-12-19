@@ -20,7 +20,7 @@ export default function ForliPage() {
             <section className="bg-[#9F060C] text-white py-24">
                 <Link
                     href="/"
-                    className="w-[90px] -mt-16 mb-14   ml-10 flex items-center gap-1
+                    className="w-[90px] -mt-16 mb-14 ml-10 flex items-center gap-1
                    bg-white/80 backdrop-blur
                    text-gray-700 text-sm font-medium
                    px-3 py-2 rounded-full
@@ -29,12 +29,18 @@ export default function ForliPage() {
                     <HiArrowLeft className="text-lg" />
                     Voltar
                 </Link>
+
                 <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                    {/* TEXTO */}
                     <div>
                         <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
                             Portal Encantos de Forli
                         </h1>
-                        <p className="text-lg mb-2">Lazer completo no bairro Nova Era</p>
+
+                        <p className="text-lg mb-2">
+                            Lazer completo no bairro Nova Era
+                        </p>
+
                         <p className="text-white/90 mb-6">
                             Ideal para morar ou investir • Financiamento facilitado
                         </p>
@@ -54,14 +60,18 @@ export default function ForliPage() {
                         </Link>
                     </div>
 
-                    <Image
-                        src="/forli1.jpeg"
-                        alt="Portal Encantos de Forli"
-                        width={520}
-                        height={360}
-                        className="rounded-2xl shadow-xl"
-                        priority
-                    />
+                    {/* VÍDEO AUTO LOOP */}
+                    <div className="rounded-2xl shadow-xl overflow-hidden">
+                        <video
+                            src="/forli.mp4"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            preload="auto"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -75,14 +85,17 @@ export default function ForliPage() {
                         height={350}
                         className="rounded-2xl shadow-lg"
                     />
+
                     <div>
                         <h2 className="text-3xl font-bold mb-4">
                             Conforto e praticidade no dia a dia
                         </h2>
+
                         <p className="text-gray-700">
                             Plantas inteligentes, lazer entregue decorado e localização que
                             facilita sua rotina e valoriza seu investimento.
                         </p>
+
                         <p className="text-sm text-gray-500 mt-4">
                             Atendimento direto com corretor exclusivo BRZ em Lavras.
                         </p>
@@ -93,7 +106,10 @@ export default function ForliPage() {
             {/* DIFERENCIAIS */}
             <section className="py-20 bg-stone-100">
                 <div className="max-w-6xl mx-auto px-6">
-                    <h2 className="text-3xl font-bold text-center mb-12">Diferenciais</h2>
+                    <h2 className="text-3xl font-bold text-center mb-12">
+                        Diferenciais
+                    </h2>
+
                     <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {[
                             "Lazer completo entregue decorado",
