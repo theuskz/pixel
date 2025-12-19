@@ -1,130 +1,123 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { FaWhatsapp } from "react-icons/fa";
 
-const whatsappLink =
-    "https://wa.me/5535999399854?text=Olá!%20Tenho%20interesse%20no%20Portal%20Muralhas%20de%20Taranto%20e%20gostaria%20de%20falar%20com%20um%20corretor.";
+export const metadata = {
+    title: "Portal Muralhas de Taranto | Apartamentos BRZ em Lavras",
+    description:
+        "Apartamentos BRZ com elevador, localização estratégica e financiamento facilitado. Atendimento com corretor exclusivo BRZ.",
+};
 
-export default function PortalMuralhasDeTaranto() {
+const whatsappTaranto =
+    "https://wa.me/5535999399854?text=Olá!%20Quero%20saber%20valores%20do%20Portal%20Muralhas%20de%20Taranto.";
+
+export default function TarantoPage() {
     return (
         <main className="w-full">
             {/* HERO */}
-            <section className="relative bg-[#F2E500]">
-                <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <section className="bg-[#00674F] py-24">
+                <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h1 className="text-4xl md:text-5xl font-bold text-black mb-6">
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-black mb-4">
                             Portal Muralhas de Taranto
                         </h1>
-                        <p className="text-lg text-black/80 mb-8">
-                            Um empreendimento da BRZ Empreendimentos pensado para quem busca
-                            conforto, praticidade e excelente potencial de valorização.
+
+                        <p className="text-lg text-black/90 mb-2">
+                            Apartamentos com elevador em localização estratégica
                         </p>
 
-                        <div className="flex gap-4 flex-wrap">
-                            <Button
-                                asChild
-                                className="bg-black text-white hover:bg-black/90 rounded-2xl px-6"
-                            >
-                                <Link href={whatsappLink} target="_blank">
-                                    Fale com um corretor
-                                </Link>
-                            </Button>
+                        <p className="text-black/70 mb-6">
+                            Ideal para morar ou investir • Financiamento facilitado
+                        </p>
 
-                            <Button
-                                variant="outline"
-                                className="border-black text-black rounded-2xl px-6"
-                            >
-                                Conheça o empreendimento
-                            </Button>
+                        <div className="bg-black/10 p-4 rounded-xl mb-8">
+                            <p className="text-sm font-medium text-black">
+                                ✔ Use FGTS • ✔ Minha Casa Minha Vida • ✔ Entrada facilitada
+                            </p>
                         </div>
+
+                        <Link
+                            href={whatsappTaranto}
+                            target="_blank"
+                            className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-green-600 text-white font-bold px-6 py-4 rounded-xl"
+                        >
+                            Quero saber valores <FaWhatsapp />
+                        </Link>
                     </div>
 
-                    <div className="relative">
-                        <Image
-                            src="/page1.jpeg"
-                            alt="Portal Muralhas de Taranto"
-                            width={600}
-                            height={400}
-                            className="rounded-2xl shadow-xl object-cover"
-                            priority
-                        />
-                    </div>
+                    <Image
+                        src="/page1.jpeg"
+                        alt="Portal Muralhas de Taranto"
+                        width={520}
+                        height={360}
+                        className="rounded-2xl shadow-xl"
+                        priority
+                    />
                 </div>
             </section>
 
             {/* SOBRE */}
             <section className="py-20 bg-white">
-                <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                     <Image
                         src="/page2.jpeg"
-                        alt="Sobre o empreendimento"
+                        alt="Detalhes do empreendimento"
                         width={500}
                         height={350}
-                        className="rounded-2xl shadow-lg object-cover"
+                        className="rounded-2xl shadow-lg"
                     />
 
                     <div>
                         <h2 className="text-3xl font-bold mb-4">
                             Qualidade BRZ em cada detalhe
                         </h2>
-                        <p className="text-gray-700 leading-relaxed">
-                            O Portal Muralhas de Taranto foi desenvolvido para oferecer uma
-                            experiência completa de moradia. Com projeto moderno, torres com
-                            elevador e localização estratégica, o empreendimento entrega
-                            segurança, conforto e praticidade para o dia a dia.
+
+                        <p className="text-gray-700">
+                            Projeto moderno, torres com elevador e infraestrutura completa para
+                            conforto, segurança e valorização do seu patrimônio.
+                        </p>
+
+                        <p className="text-sm text-gray-500 mt-4">
+                            Atendimento direto com corretor exclusivo BRZ em Lavras.
                         </p>
                     </div>
                 </div>
             </section>
 
             {/* DIFERENCIAIS */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-20 bg-stone-100">
                 <div className="max-w-6xl mx-auto px-6">
                     <h2 className="text-3xl font-bold text-center mb-12">
-                        Diferenciais do empreendimento
+                        Diferenciais
                     </h2>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {[
-                            "Localização estratégica próxima a comércios e serviços",
                             "Torres com elevador",
-                            "Plantas funcionais de 2 quartos",
-                            "Área de lazer planejada para toda a família",
-                            "Infraestrutura completa para o dia a dia",
-                            "Excelente potencial de valorização"
-                        ].map((item, index) => (
-                            <Card key={index} className="rounded-2xl h-[80px] flex justify-center items-center shadow-sm">
-                                <CardContent className="p-6 text-center">
-                                    <p className="font-medium text-gray-800">{item}</p>
-                                </CardContent>
-                            </Card>
+                            "Localização estratégica",
+                            "Plantas de 2 quartos",
+                            "Área de lazer para a família",
+                            "Infraestrutura completa",
+                            "Excelente potencial de valorização",
+                        ].map((item, i) => (
+                            <div
+                                key={i}
+                                className="bg-white rounded-xl shadow p-6 text-center font-medium"
+                            >
+                                {item}
+                            </div>
                         ))}
                     </div>
-                </div>
-            </section>
 
-            {/* CTA FINAL */}
-            <section className="py-20 bg-black text-white">
-                <div className="max-w-4xl mx-auto px-6 text-center">
-                    <h2 className="text-3xl font-bold mb-4">
-                        Viva ou invista no Portal Muralhas de Taranto
-                    </h2>
-                    <p className="text-white/80 mb-8">
-                        Entre em contato e descubra todas as condições especiais disponíveis
-                        para este empreendimento BRZ.
-                    </p>
-
-                    <Button
-                        asChild
-                        className="bg-[#F2E500] text-black hover:bg-yellow-400 rounded-2xl px-8 py-6 text-lg"
-                    >
-                        <Link href={whatsappLink} target="_blank">
-                            Quero mais informações
+                    <div className="text-center mt-12">
+                        <Link
+                            href={whatsappTaranto}
+                            target="_blank"
+                            className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-xl font-bold"
+                        >
+                            Falar com corretor <FaWhatsapp />
                         </Link>
-                    </Button>
+                    </div>
                 </div>
             </section>
         </main>

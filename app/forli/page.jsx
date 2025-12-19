@@ -1,124 +1,113 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { FaWhatsapp } from "react-icons/fa";
 
-const whatsappLink =
-    "https://wa.me/5535999399854?text=Olá!%20Tenho%20interesse%20no%20Portal%20Encantos%20de%20Forli%20e%20gostaria%20de%20falar%20com%20um%20corretor.";
+export const metadata = {
+    title: "Portal Encantos de Forli | Apartamentos BRZ em Lavras",
+    description:
+        "Apartamentos com lazer completo no bairro Nova Era. Financiamento facilitado e atendimento com corretor exclusivo BRZ.",
+};
 
-export default function PortalEncantosDeForli() {
+const whatsappForli =
+    "https://wa.me/5535999399854?text=Olá!%20Quero%20saber%20valores%20do%20Portal%20Encantos%20de%20Forli.";
+
+export default function ForliPage() {
     return (
         <main className="w-full">
             {/* HERO */}
-            <section className="relative bg-[#9F060C]">
-                <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <section className="bg-[#9F060C] text-white py-24">
+                <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                        <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
                             Portal Encantos de Forli
                         </h1>
-                        <p className="text-lg text-white/90 mb-8">
-                            Um empreendimento da BRZ Empreendimentos projetado para oferecer
-                            qualidade de vida, praticidade e bem-estar em uma localização
-                            estratégica.
+                        <p className="text-lg mb-2">Lazer completo no bairro Nova Era</p>
+                        <p className="text-white/90 mb-6">
+                            Ideal para morar ou investir • Financiamento facilitado
                         </p>
-                        <div className="flex gap-4 flex-wrap">
-                            <Button
-                                asChild
-                                variant="outline"
-                                className="bg-white text-black rounded-2xl px-6"
-                            >
-                                <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                                    Fale com um corretor
-                                </Link>
-                            </Button>
-                            <Button
-                                variant="outline"
-                                className="border-white text-black rounded-2xl px-6"
-                            >
-                                Conheça o empreendimento
-                            </Button>
+
+                        <div className="bg-white/15 p-4 rounded-xl mb-8">
+                            <p className="text-sm">
+                                ✔ Use FGTS • ✔ Entrada facilitada • ✔ Minha Casa Minha Vida
+                            </p>
                         </div>
+
+                        <Link
+                            href={whatsappForli}
+                            target="_blank"
+                            className="inline-flex items-center gap-2 bg-white text-[#9F060C] font-bold px-6 py-4 rounded-xl"
+                        >
+                            Simular financiamento <FaWhatsapp />
+                        </Link>
                     </div>
 
-                    <div className="relative">
-                        <Image
-                            src="/forli1.jpeg"
-                            alt="Portal Encantos de Forli"
-                            width={600}
-                            height={400}
-                            className="rounded-2xl shadow-xl object-cover"
-                            priority
-                        />
-                    </div>
+                    <Image
+                        src="/forli1.jpeg"
+                        alt="Portal Encantos de Forli"
+                        width={520}
+                        height={360}
+                        className="rounded-2xl shadow-xl"
+                        priority
+                    />
                 </div>
             </section>
 
             {/* SOBRE */}
             <section className="py-20 bg-white">
-                <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                     <Image
                         src="/forli2.jpeg"
-                        alt="Sobre o empreendimento"
+                        alt="Detalhes do empreendimento"
                         width={500}
                         height={350}
-                        className="rounded-2xl shadow-lg object-cover"
+                        className="rounded-2xl shadow-lg"
                     />
-
                     <div>
                         <h2 className="text-3xl font-bold mb-4">
-                            Conforto e funcionalidade para o seu dia a dia
+                            Conforto e praticidade no dia a dia
                         </h2>
-                        <p className="text-gray-700 leading-relaxed">
-                            O Portal Encantos de Forli foi desenvolvido com foco em praticidade
-                            e bem-estar. Com plantas inteligentes, áreas comuns planejadas e
-                            fácil acesso a comércios e serviços, o empreendimento é ideal para
-                            quem busca morar bem ou investir com segurança.
+                        <p className="text-gray-700">
+                            Plantas inteligentes, lazer entregue decorado e localização que
+                            facilita sua rotina e valoriza seu investimento.
+                        </p>
+                        <p className="text-sm text-gray-500 mt-4">
+                            Atendimento direto com corretor exclusivo BRZ em Lavras.
                         </p>
                     </div>
                 </div>
             </section>
 
             {/* DIFERENCIAIS */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-20 bg-stone-100">
                 <div className="max-w-6xl mx-auto px-6">
-                    <h2 className="text-3xl font-bold text-center mb-12">
-                        Diferenciais do Portal Encantos de Forli
-                    </h2>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 flex justify-center items-center gap-8">
-                        {["Lazer completo entregue decorado", "Plantas funcionais de 2 quartos", "Localização estratégica no bairro Nova Era", "Infraestrutura com segurança e conveniência", "Serviços exclusivos Housi", "Projeto ideal para morar ou investir"].map(
-                            (item, index) => (
-                                <Card key={index} className="rounded-2xl h-[80px] flex justify-center items-center shadow-sm">
-                                    <CardContent className="p-6 text-center">
-                                        <p className="font-medium text-gray-800">{item}</p>
-                                    </CardContent>
-                                </Card>
-                            )
-                        )}
+                    <h2 className="text-3xl font-bold text-center mb-12">Diferenciais</h2>
+                    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        {[
+                            "Lazer completo entregue decorado",
+                            "Plantas de 2 quartos",
+                            "Bairro Nova Era",
+                            "Infraestrutura moderna",
+                            "Serviços exclusivos",
+                            "Alto potencial de valorização",
+                        ].map((item, i) => (
+                            <div
+                                key={i}
+                                className="bg-white rounded-xl shadow p-6 text-center font-medium"
+                            >
+                                {item}
+                            </div>
+                        ))}
                     </div>
-                </div>
-            </section>
 
-            {/* CTA FINAL */}
-            <section className="py-20 bg-[#9F060C] text-white">
-                <div className="max-w-4xl mx-auto px-6 text-center">
-                    <h2 className="text-3xl font-bold mb-4">
-                        More ou invista no Portal Encantos de Forli
-                    </h2>
-                    <p className="text-white/90 mb-8">
-                        Fale com um corretor e conheça todas as condições especiais deste
-                        empreendimento BRZ Empreendimentos.
-                    </p>
-                    <Button
-                        asChild
-                        className="bg-white text-[#9F060C] hover:bg-white/90 rounded-2xl px-8 py-6 text-lg"
-                    >
-                        <Link href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                            Quero mais informações
+                    <div className="text-center mt-12">
+                        <Link
+                            href={whatsappForli}
+                            target="_blank"
+                            className="inline-flex items-center gap-2 bg-[#9F060C] text-white px-8 py-4 rounded-xl font-bold"
+                        >
+                            Falar com corretor <FaWhatsapp />
                         </Link>
-                    </Button>
+                    </div>
                 </div>
             </section>
         </main>

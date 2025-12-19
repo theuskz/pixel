@@ -6,9 +6,6 @@ export const metadata = {
     template: "%s | BRZ Empreendimentos",
   },
   description: "Garanta seu imóvel com a BRZ Empreendimentos",
-  icons: {
-    icon: "/public/favicon.ico",
-  },
 };
 
 export default function RootLayout({ children }) {
